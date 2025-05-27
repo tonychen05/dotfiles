@@ -1,0 +1,89 @@
+/* Global */
+* {
+  font-family: "JetBrains Mono", "Noto Sans Symbols 2", sans-serif;
+  font-size: 12px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: alpha(#0f1018, 0.85);
+  color: #d0dae9;
+  border-radius: 11px; 
+  border: 2px solid alpha(#7C849D, 0.3);
+}
+
+
+/* Module Stlye */
+#window,
+#tray,
+#clock,  
+#network,
+#bluetooth,
+#battery,
+#pulseaudio,
+#backlight,
+#memory,
+#cpu{
+  background-color: rgba(15,27,53,0.9);
+  color: #d0dae9;
+  padding: 2px 10px; 
+  margin: 6px 4px;
+  border-radius: 8px;
+  border: 1px solid alpha(#9198a3, 0.3);
+}
+
+
+/* Brighten on Hover */
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#pulseaudio:hover,
+#clock:hover,
+#window:hover {
+  background-color: rgba(70, 75, 90, 0.9);
+}
+/* --- */
+
+#workspaces{
+  background-color: rgba(15,27,53,0.9);
+  border:none;
+  padding: 0;
+  margin-left: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-right: 4px;
+  border-radius: 10px;
+  border: 1px solid alpha(#9198a3, 0.3);
+}
+#workspaces button:hover{
+  background-color: rgba(97, 175, 239, 0.2);
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
+}
+
+#workspaces button.active {
+  background-color: #61afef; 
+  color: #ffffff;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  background: transparent;
+  border: none;
+  color: #888888;
+  padding: 2px 8px;
+  margin: 0 2px;
+  font-weight: bold;
+}
+
+#window {
+  font-weight: normal;
+  color: #d0dae9;
+}
+
+

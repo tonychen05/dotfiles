@@ -1,0 +1,106 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "height": 35,
+  "spacing": 4,
+  "margin-left": 20,
+  "margin-top": 0,
+  "margin-right": 20,
+  
+  
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "tray",
+    "network",
+    "battery",
+    "bluetooth",
+    "pulseaudio",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+    "*":[1,2,3,4,5,6,7,8,9]
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "default": ""
+    }
+  },
+  "network": {
+    "format-wifi": "󰖩 {essid}",
+    "format-ethernet":"  ",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format": "󰅧 {bandwidthUpBytes}  󰅢 {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP) "
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}% ",
+    "format-charging": " 󱐋{capacity}%",
+	"interval": 1,
+    "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    "tooltip": true
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}% ",
+    "format-muted": "󰖁  0% ",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        "",
+        "",
+        " "
+      ]
+    },
+    "on-click-right": "pavucontrol -t 3",
+    "on-click": "pamixer --toggle-mute",
+    "on-scroll-up": "pamixer --increase 2",
+    "on-scroll-down": "pamixer --decrease 2",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%"
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "America/New_York",
+    "format": " {:%H:%M} ",
+    "tooltip": true,
+    "tooltip-format": "{:L%Y/%m/%d, %A}"
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 6
+  },
+  "bluetooth": {
+    "format": " {status} ",
+    "format-connected": " {device_alias} ",
+    "format-connected-battery": " {device_alias}{device_battery_percentage}% ",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  }
+}
