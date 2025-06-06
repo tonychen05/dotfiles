@@ -12,5 +12,3 @@ require("lazy").setup("plugins")
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
 
--- NEOTREE
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
