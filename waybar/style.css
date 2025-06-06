@@ -20,7 +20,8 @@ window#waybar {
 /* Module Stlye */
 #window,
 #tray,
-#clock,  
+#clock,
+#custom-notification,
 #network,
 #bluetooth,
 #battery,
@@ -42,6 +43,7 @@ window#waybar {
 #network:hover,
 #battery:hover,
 #pulseaudio:hover,
+#custom-notification:hover,
 #clock:hover,
 #window:hover {
   background-color: @color2;
@@ -88,4 +90,6 @@ window#waybar {
   color: @foreground;
 }
 
-
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
