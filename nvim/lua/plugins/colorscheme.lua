@@ -1,7 +1,8 @@
 return {
-    {
+  {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     name = "catppuccin",
     opts = {
       integrations = {
@@ -42,6 +43,9 @@ return {
         treesitter_context = true,
         which_key = true,
       },
+      config = function()
+        vim.cmd([[colorscheme catppuccin-mocha]])
+      end
     },
     specs = {
       {
