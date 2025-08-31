@@ -6,9 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # --- PLUGINS ---
 plugins=(
@@ -18,7 +18,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   fast-syntax-highlighting
-  dirhistory	
+  dirhistory
 	ssh-agent
 )
 
@@ -51,6 +51,33 @@ fi
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
 
+# Starship
+bindkey -v
+if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
+      "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
+    zle -N zle-keymap-select "";
+fi
+eval "$(starship init zsh)"
+
+# Yazi Shell Wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+# zoxide
+eval "$(zoxide init zsh)"
+alias nzo="~/.config/hypr/scripts/zoxide_openfiles_nvim.sh"
+
+# fzf
+eval "$(fzf --zsh)"
+
+# fzf with git by Junegunn
+source ~/.config/hypr/scripts/fzf-git.sh
+
 # --- ALIASES ---
 # For a full list of active aliases, run `alias`.
 alias c='clear'
@@ -68,3 +95,5 @@ alias pulse-close="kill $(ps aux | grep pulseUI | awk '{print $2}')"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH=$PATH:/home/tony/.spicetify
+
+
