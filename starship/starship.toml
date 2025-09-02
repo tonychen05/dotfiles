@@ -72,7 +72,7 @@ RedHatEnterprise = "󱄛"
 #show_always = true
 #style_user = "bg:surface0 fg:text"
 #style_root = "bg:surface0 fg:text"
-#format = '[ $user ]($style)'
+format = '[ $user ]($style)'
 
 [directory]
 style = "sapphire"
@@ -148,24 +148,19 @@ format = '[[ $symbol( $version) ]]($style)'
 
 [kotlin]
 symbol = ""
-
 format = '[[ $symbol( $version) ]]($style)'
 
 [haskell]
 symbol = ""
-
 format = '[[ $symbol( $version) ]]($style)'
 
 [python]
 symbol = ""
-
-format = '[[ $symbol( $version) ]]($style)'
-
+format = '[ $symbol( $version) ]($style)'
 
 [docker_context]
 symbol = ""
 format = '[ $symbol( $context) ]($style)'
-
 
 [time]
 disabled = true

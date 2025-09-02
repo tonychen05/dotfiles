@@ -23,4 +23,5 @@ auto-update-channel = stable
 
 # extras
 shell-integration-features = no-cursor 
-copy-on-select = clipboard
+copy-on-select = true
+app-notifications = no-clipboard-copy
