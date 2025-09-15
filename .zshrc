@@ -52,6 +52,9 @@ if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
 fi
 eval "$(starship init zsh)"
 
+# rbenv
+eval "$(rbenv init -)"
+
 # Yazi Shell Wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
