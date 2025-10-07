@@ -13,6 +13,7 @@ plugins=(
   fast-syntax-highlighting
   dirhistory
 	ssh-agent
+  virtualenv
 )
 
 # Powerline10k has an instant prompt setting that doesn't like when this plugin writes to the console.
@@ -84,8 +85,10 @@ alias lt='eza -a --tree --level=1 --icons=always'
 alias shutdown='systemctl poweroff'
 alias vim='$EDITOR'
 alias dots='cd ~/dotfiles/'
-alias pulse-close="kill $(ps aux | grep pulseUI | awk '{print $2}')"
-
+alias pulse-kill="kill $(ps aux | grep pulseUI | awk '{print $2}')" 
+alias pulse-close='sudo /opt/pulsesecure/bin/startup.sh stop'
+alias pulse-start='sudo /opt/pulsesecure/bin/startup.sh start'
+alias pulse-restart='sudo /opt/pulsesecure/bin/startup.sh restart'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

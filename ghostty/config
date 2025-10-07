@@ -1,5 +1,5 @@
 # By default Reload config with ctrl + shift + :withi, 
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 background = #000000
 background-opacity = 0.75
 background-blur-radius = 23
