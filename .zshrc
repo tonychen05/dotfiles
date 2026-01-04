@@ -14,6 +14,8 @@ fi
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
 export ZSH="$HOME/.oh-my-zsh"
 
 # --- PLUGINS ---
@@ -23,7 +25,7 @@ plugins=(
   # web-search
   zsh-autosuggestions
   zsh-syntax-highlighting
-  fast-syntax-highlighting
+  # fast-syntax-highlighting
   dirhistory
 	ssh-agent
   virtualenv
@@ -31,10 +33,10 @@ plugins=(
 )
 
 # Load zoxide lazily
-function load_zoxide() {
-  eval "$(zoxide init zsh)"
-}
-autoload -U load_zoxide
+#function load_zoxide() {
+#  eval "$(zoxide init zsh)"
+#}
+#autoload -U load_zoxide
 
 
 # Powerline10k has an instant prompt setting that doesn't like when this plugin writes to the console.
@@ -88,6 +90,7 @@ function y() {
 }
 
 # zoxide
+eval "$(zoxide init zsh)"
 alias nzo="~/.config/hypr/scripts/zoxide_openfiles_nvim.sh"
 
 # fzf
