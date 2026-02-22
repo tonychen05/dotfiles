@@ -6,16 +6,18 @@ DISABLE_COMPFIX="true"
 
 # Cache completions aggressively
 autoload -Uz compinit
-if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
-    compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  compinit;
 else
-    compinit -C
-fi
+  compinit -C;
+fi;
+
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # --- PLUGINS ---
@@ -31,13 +33,6 @@ plugins=(
   virtualenv
   nvm
 )
-
-# Load zoxide lazily
-#function load_zoxide() {
-#  eval "$(zoxide init zsh)"
-#}
-#autoload -U load_zoxide
-
 
 # Powerline10k has an instant prompt setting that doesn't like when this plugin writes to the console.
 zstyle :omz:plugins:ssh-agent quiet yes
@@ -90,7 +85,7 @@ function y() {
 }
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 alias nzo="~/.config/hypr/scripts/zoxide_openfiles_nvim.sh"
 
 # fzf

@@ -5,7 +5,7 @@ ln -sf ~/.cache/wal/colors-waybar.css ~/dotfiles/waybar/
 ln -sf ~/.cache/wal/colors-rofi-dark.rasi ~/dotfiles/rofi/shared/
 
 # Reloads hyprland
-hyprctl hyprpaper reload ,"$1" # $1 contains wallpaper name
+hyprctl hyprpaper wallpaper \',"$1"\' # $1 contains wallpaper name
 
 
 # Reloads waybar
