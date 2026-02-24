@@ -98,9 +98,13 @@ source ~/.config/hypr/scripts/fzf-git.sh
 # For a full list of active aliases, run `alias`.
 alias c='clear'
 alias ff='fastfetch'
+
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
+
+alias cat='bat --pager=never'
+
 alias shutdown='systemctl poweroff'
 alias vim='$EDITOR'
 alias dots='cd ~/dotfiles/'

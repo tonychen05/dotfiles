@@ -5,6 +5,16 @@ return {
     local conform = require("conform")
 
     conform.setup({
+      formatters = {
+        black = {
+          command = "uv",
+          prepend_args = { "tool", "run", "--", "black" },
+        },
+        isort = {
+          command = "uv",
+          prepend_args = { "tool", "run", "--", "isort" },
+        },
+      },
       formatters_by_ft = {
         javascript = { "prettier" },
         typescript = { "prettier" },

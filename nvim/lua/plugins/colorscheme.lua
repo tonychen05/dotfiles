@@ -1,9 +1,10 @@
 return {
   {
     "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
-    name = "catppuccin",
+
     opts = {
       integrations = {
         aerial = true,
@@ -37,23 +38,27 @@ return {
         noice = true,
         notify = true,
         semantic_tokens = true,
-        -- snacks = true,
         telescope = true,
         treesitter = true,
         treesitter_context = true,
         which_key = true,
       },
-      config = function()
-        vim.cmd([[colorscheme catppuccin-mocha]])
-      end
     },
+
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme("catppuccin-mocha")
+    end,
+
+    -- LazyVim-style "inject config into other plugins"
     specs = {
       {
         "akinsho/bufferline.nvim",
         optional = true,
         opts = function(_, opts)
           if (vim.g.colors_name or ""):find("catppuccin") then
-            opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+            -- New API (replaces catppuccin.groups.integrations.bufferline.get())
+            opts.highlights = require("catppuccin.special.bufferline").get_theme()
           end
         end,
       },
