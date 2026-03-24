@@ -19,6 +19,7 @@ export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
 
 export ZSH="$HOME/.oh-my-zsh"
+export MANPAGER="nvim --cmd 'set laststatus=0 ' +'set statuscolumn= nowrap laststatus=0' +Man\!"
 
 # --- PLUGINS ---
 plugins=(
