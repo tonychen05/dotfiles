@@ -22,7 +22,6 @@ return {
       })
     end,
   },
-
   {
     "mason-org/mason-lspconfig.nvim",
     dependencies = {
@@ -31,7 +30,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     opts = {
-      ensure_installed = { "lua_ls", "pyright" },
+      ensure_installed = { "lua_ls", "pyright", "sqls" },
       -- v2 uses "automatic_enable" (not setup_handlers)
       automatic_enable = true,
     },
@@ -41,6 +40,10 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- Define configs (Neovim 0.11+)
+      vim.lsp.config("sqls", {
+        capabilities = capabilities,
+      })
+
       vim.lsp.config("pyright", {
         capabilities = capabilities,
       })
