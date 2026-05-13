@@ -1,0 +1,11 @@
+module modules
+singleton Colors 1.0 Colors.qml
+Workspaces  1.0 Workspaces.qml
+WindowTitle 1.0 WindowTitle.qml
+Tray        1.0 Tray.qml
+Wifi        1.0 Wifi.qml
+Bluetooth   1.0 Bluetooth.qml
+Battery     1.0 Battery.qml
+Sound       1.0 Sound.qml
+Clock            1.0 Clock.qml
+NotificationCard 1.0 NotificationCard.qml
