@@ -30,7 +30,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     opts = {
-      ensure_installed = { "lua_ls", "pyright", "sqls" },
+      ensure_installed = { "lua_ls", "pyright", "sqls", "stylua" },
       -- v2 uses "automatic_enable" (not setup_handlers)
       automatic_enable = true,
     },
