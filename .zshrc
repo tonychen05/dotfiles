@@ -17,6 +17,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+export GOPATH=$HOME/.go
 
 export ZSH="$HOME/.oh-my-zsh"
 export MANPAGER="nvim --cmd 'set laststatus=0 ' +'set statuscolumn= nowrap laststatus=0' +Man\!"

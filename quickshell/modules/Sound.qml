@@ -16,13 +16,12 @@ Rectangle {
   Behavior on color { ColorAnimation { duration: 100 } }
 
   PwObjectTracker {
-    id: sinkTracker
-    objects: [Pipewire.defaultAudioSink]
+    objects: Pipewire.defaultAudioSink ? [Pipewire.defaultAudioSink] : []
   }
 
-  property var  sink:   sinkTracker.objects[0] ?? null
-  property real volume: sink?.audio?.volume    ?? 0
-  property bool muted:  sink?.audio?.muted     ?? false
+  property var  sink:   Pipewire.defaultAudioSink
+  property real volume: sink?.audio?.volume ?? 0
+  property bool muted:  sink?.audio?.muted  ?? false
 
   Text {
     id: label
